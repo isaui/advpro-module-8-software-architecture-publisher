@@ -20,4 +20,7 @@ Subscriber listen ke message queue rabbitmq di port 15672, kemudian publisher me
 ![Alt teks](docs/monitoring.png)
 Spike tersebut terjadi karena setiap kali menjalankan kode publisher, publisher mengirimkan event ke message queue rabbitmq pada port 15672 tersebut
 ![Alt teks](docs/simulating-slow-response.png)
-10. Hal tersebut terjadi karena kecepatan pemrosesan subscriber lebih lambat daripada laju pesan masuk, maka akan terjadi penumpukan pesan dalam antrean
+Ada 10. Hal tersebut terjadi karena kecepatan pemrosesan subscriber lebih lambat daripada laju pesan masuk, maka akan terjadi penumpukan pesan dalam antrean
+![Alt teks](docs/monitoring-three-subscriber.png)
+![Alt teks](docs/three-terminal.png)
+Jika jumlah subscriber ditambah, antrian pesan cenderung lebih sedikit karena pesan diproses lebih cepat, mengurangi penumpukan pesan dalam antrean. Untuk membuatnya lebih efisien lagi, kita hilangkan sleep pada thread yang terjadi di subscriber. Sementara itu, pada publisher, daripada kita kirim event satu satu, lebih baik kita kirim event dalam 1 batching.
