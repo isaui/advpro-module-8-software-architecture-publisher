@@ -16,3 +16,6 @@ Ya, URL "amqp://guest:guest@localhost:5672" yang digunakan dalam program publish
 ![Alt teks](docs/screenshot-layar-rabbitmq.png)
 ![Alt teks](docs/screenshot-console-subscriber.png)
 Subscriber listen ke message queue rabbitmq di port 15672, kemudian publisher mengirimkan event ke message queue tersebut dan event tersebut dikonsumsi oleh Subscriber.
+
+![Alt teks](docs/monitoring.png)
+Spike tersebut terjadi karena setiap kali menjalankan kode publisher, publisher mengirimkan event ke message queue rabbitmq pada port 15672 tersebut
